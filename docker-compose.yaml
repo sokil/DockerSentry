@@ -9,14 +9,21 @@ services:
   postgres:
     image: postgres
     container_name: sentry-postgres
+    volumes:
+      - ./share/pgdata:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: secret
-      POSTGRES_USER: sentry
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DBNAME: sentry
+      POSTGRES_DBUSER: sentry
+      POSTGRES_DBPASS: sentry
 
   sentry:
     container_name: sentry
     image: sentry
     command: bash /bootstrap/sentry.sh
+    ports:
+     - 9000:9000
     volumes:
       - ./bootstrap:/bootstrap
     depends_on:
@@ -26,6 +33,7 @@ services:
       - redis
       - postgres
     environment:
+      SENTRY_SECRET_KEY: abcdefghijklmnopqarstuwxyz0123456789
       SENTRY_REDIS_HOST: redis
       SENTRY_POSTGRES_HOST: postgres
       SENTRY_DB_USER: sentry
