@@ -12,16 +12,15 @@ services:
     volumes:
       - ./share/pgdata:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: sentry
+      POSTGRES_PASSWORD: sentry
       POSTGRES_DBNAME: sentry
       POSTGRES_DBUSER: sentry
       POSTGRES_DBPASS: sentry
 
   sentry:
-    container_name: sentry
+    container_name: sentry-www
     image: sentry
-    command: bash /bootstrap/sentry.sh
     ports:
      - 9000:9000
     volumes:
@@ -32,6 +31,34 @@ services:
     links:
       - redis
       - postgres
+    environment:
+      SENTRY_SECRET_KEY: abcdefghijklmnopqarstuwxyz0123456789
+      SENTRY_REDIS_HOST: redis
+      SENTRY_POSTGRES_HOST: postgres
+      SENTRY_DB_USER: sentry
+      SENTRY_DB_PASSWORD: sentry
+
+  cron:
+    container_name: sentry-cron
+    image: sentry
+    links:
+      - redis
+      - postgres
+    command: "sentry run cron"
+    environment:
+      SENTRY_SECRET_KEY: abcdefghijklmnopqarstuwxyz0123456789
+      SENTRY_REDIS_HOST: redis
+      SENTRY_POSTGRES_HOST: postgres
+      SENTRY_DB_USER: sentry
+      SENTRY_DB_PASSWORD: sentry
+
+  worker:
+    container_name: sentry-worker
+    image: sentry
+    links:
+     - redis
+     - postgres
+    command: "sentry run worker"
     environment:
       SENTRY_SECRET_KEY: abcdefghijklmnopqarstuwxyz0123456789
       SENTRY_REDIS_HOST: redis
