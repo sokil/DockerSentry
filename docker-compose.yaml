@@ -22,9 +22,7 @@ services:
     container_name: sentry-www
     image: sentry
     ports:
-     - 9000:9000
-    volumes:
-      - ./bootstrap:/bootstrap
+     - 9050:9000
     depends_on:
       - redis
       - postgres
