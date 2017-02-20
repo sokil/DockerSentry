@@ -11,7 +11,7 @@ fi
 bash ./run.sh
 
 # start migration
-docker exec -it sentry-www upgrade
+docker exec -it sentry-www sentry upgrade
 
 # welcome message
 echo "Open http://127.0.0.1:9000/ in your browser"
