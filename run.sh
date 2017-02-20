@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # start containers
-docker-container up -d
+docker-compose up -d
