@@ -14,4 +14,4 @@ pip install docker-compose
 
 Then run `install.sh` to start containers and initialise sentry. Pass email and password.
 
-Now sentry may be accessible by address `http://127.0.0.1:9000`
+Now sentry may be accessible by address `http://127.0.0.1:9050`
