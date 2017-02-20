@@ -8,7 +8,7 @@ then
 fi
 
 # start docker containers
-bash ./run.sh
+bash ./start.sh
 
 # start migration
 docker exec -it sentry-www sentry upgrade
