@@ -14,4 +14,4 @@ bash ./start.sh
 docker exec -it sentry-www sentry upgrade
 
 # welcome message
-echo "Open http://127.0.0.1:9050/ in your browser"
+echo -e "\n\033[0;32mOpen http://127.0.0.1:9050/ in your browser\033[0m"
