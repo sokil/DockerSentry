@@ -64,3 +64,9 @@ services:
       SENTRY_DB_USER: sentry
       SENTRY_DB_PASSWORD: sentry
       C_FORCE_ROOT: 1
+
+  cyclops:
+    container_name: sentry-cyclops
+    build: ./cyclops
+    volumes:
+      - ./cyclops:/ggg
