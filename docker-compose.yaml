@@ -33,6 +33,7 @@ services:
       SENTRY_SECRET_KEY: abcdefghijklmnopqarstuwxyz0123456789
       SENTRY_REDIS_HOST: redis
       SENTRY_POSTGRES_HOST: postgres
+      SENTRY_DB_NAME: sentry
       SENTRY_DB_USER: sentry
       SENTRY_DB_PASSWORD: sentry
 
@@ -47,6 +48,7 @@ services:
       SENTRY_SECRET_KEY: abcdefghijklmnopqarstuwxyz0123456789
       SENTRY_REDIS_HOST: redis
       SENTRY_POSTGRES_HOST: postgres
+      SENTRY_DB_NAME: sentry
       SENTRY_DB_USER: sentry
       SENTRY_DB_PASSWORD: sentry
 
@@ -61,6 +63,7 @@ services:
       SENTRY_SECRET_KEY: abcdefghijklmnopqarstuwxyz0123456789
       SENTRY_REDIS_HOST: redis
       SENTRY_POSTGRES_HOST: postgres
+      SENTRY_DB_NAME: sentry
       SENTRY_DB_USER: sentry
       SENTRY_DB_PASSWORD: sentry
       C_FORCE_ROOT: 1
