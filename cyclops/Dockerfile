@@ -12,8 +12,5 @@ RUN pip install psycopg2 cyclops
 COPY cyclops.conf /cyclops.conf
 COPY entrypoint.sh /entrypoint.sh
 
-RUN ls -lah /
-RUN bash
-
 CMD ["bash", "/entrypoint.sh"]
 
