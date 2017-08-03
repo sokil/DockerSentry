@@ -73,3 +73,5 @@ services:
     build: ./cyclops
     links:
       - sentry
+    ports:
+     - 9100:9100
