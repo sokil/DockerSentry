@@ -7,10 +7,13 @@ RUN apt-get install -y --no-install-recommends \
     libssl-dev \
     libcurl4-openssl-dev
 
-RUN pip install cyclops
+RUN pip install psycopg2 cyclops
 
 COPY cyclops.conf /cyclops.conf
 COPY entrypoint.sh /entrypoint.sh
 
-CMD ["/entrypoint.sh"]
+RUN ls -lah /
+RUN bash
+
+CMD ["bash", "/entrypoint.sh"]
 

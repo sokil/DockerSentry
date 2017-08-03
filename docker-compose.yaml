@@ -71,5 +71,5 @@ services:
   cyclops:
     container_name: sentry-cyclops
     build: ./cyclops
-    volumes:
-      - ./cyclops:/ggg
+    links:
+      - sentry
