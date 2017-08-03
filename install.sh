@@ -8,7 +8,8 @@ then
 fi
 
 # start docker containers
-docker-compose up
+# daenmonised up is required to go to next command
+docker-compose up -d
 
 # start migration
 docker exec -it sentry-www sentry upgrade
