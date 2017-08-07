@@ -16,6 +16,16 @@ Then run `install.sh` to start containers and initialise sentry. Pass email and 
 
 Now sentry may be accessible by address `http://127.0.0.1:9050`
 
+## Sentry
+
+Sentry may be opened by URL: `http://127.0.0.1:9050`
+
+## Cyclops
+
+See more info in https://github.com/heynemann/cyclops
+
+Cyclops instance is accessible by URL: `http://127.0.0.1:9100`
+
 ## Usage
 
 Start sentry:
