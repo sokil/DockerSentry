@@ -3,12 +3,12 @@
 # check if database initialised
 if [[ -d ./share/pgdata ]];
 then
-    echo "Sentry already installed. Run 'start.sh' to start sentry"
+    echo 'Sentry already installed. Start it or remove ./share directory and relaunch ./install.sh'
     exit
 fi
 
 # start docker containers
-# daenmonised up is required to go to next command
+# demonized up is required to go to next command
 docker-compose up -d
 
 # start migration

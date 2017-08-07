@@ -18,7 +18,22 @@ Now sentry may be accessible by address `http://127.0.0.1:9050`
 
 ## Usage
 
-* Run `start.sh` to start container.
-* Run `restart.sh` to restart container.
-* Run `stop.sh` to stop container.
-* Run `remove.sh` to remove container.
+Start sentry:
+```bash
+docker-compose start
+```
+
+Stop sentry:
+```bash
+docker-compose stop
+```
+
+Retart sentry:
+```bash
+docker-compose restart
+```
+
+Remove settry:
+```bash
+docker-compose rm
+```
