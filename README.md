@@ -22,7 +22,7 @@ Sentry may be opened by URL: `http://127.0.0.1:9050`
 
 ## Cyclops
 
-See more info in https://github.com/heynemann/cyclops
+See more info in https://github.com/sentry-extensions/cyclops
 
 Cyclops instance is accessible by URL: `http://127.0.0.1:9100`
 
